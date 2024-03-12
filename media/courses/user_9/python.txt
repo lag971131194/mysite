@@ -1,0 +1,7 @@
+os模块
+re模块
+DjangoSocial Auth 就是一个专门用于社交媒体账户登录 Django 项目的第三方应用，github.com 上的源
+码地址是 https://github.com/omab/django-social-auth，其中有较为详细的说明。
+django登录
+from django.contrib.auth import views
+django发送邮件

@@ -1,0 +1,15 @@
+{% extends 'article/base.html' %}
+
+{% block title %}
+create course
+{% endblock %}
+
+{% block content %}
+<div style="margin-left: 100px;margin-top: 10px">
+    <form action="." method="post">{% csrf_token %}
+{#        as_p表示把form表单在前端页面渲染成p标签的形式展示，此外还有as_ul,as_table等#}
+        {{ form.as_p }}
+        <input type="submit" value="Create Course">
+    </form>
+</div>
+{% endblock %}

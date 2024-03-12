@@ -1,0 +1,29 @@
+{% extends "article/base.html" %}
+{% block title %}List Lesson{% endblock %}
+{% block content %}
+<div>
+    <div class="text-center">
+        <h1>{{ course.title }}</h1>
+        <p>课程内容列表</p>
+    </div>
+    <table class="table table-hover" style="margin-top: 10px">
+    <tr>
+        <td>序号</td>
+        <td>内容标题</td>
+        <td>发布日期</td>
+    </tr>
+{#    传入到模板中的 course 是实例对象，再观察 Lesson 数据#}
+{#    模型类，其中有 course = models.ForeignKey(Course, related_name='lesson')，因此可以通过反向#}
+{#    查询得到 Lesson 的实例，即 course.lesson.all 为所有 Lesson 实例集合。#}
+    {% for lesson in course.lesson.all %}
+    <tr id="{{ forloop.counter }}">
+        <td>{{ forloop.counter }}</td>
+        <td><a href="{% url 'course:detail_lesson' lesson.id %}">{{ lesson.title }}</a></td>
+        <td>{{ lesson.created|date:"Y-m-d" }}</td>
+
+    </tr>
+    {% endfor %}
+    
+    </table>
+</div>
+{% endblock %}

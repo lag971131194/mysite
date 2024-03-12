@@ -1,0 +1,36 @@
+{% extends 'article/base.html' %}
+
+{% block title %}
+Lesson Detail
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="text-center">
+        <h1>{{ lesson.title }}</h1>
+        <p>讲师：{{ lesson.user.username }}</p>
+    </div>
+    <div>
+        {% if lesson.video %}
+{#            曾经在./mysite/urls.py 文件中有 urlpatterns += static(settings.MEDIA_URL,document_#}
+{#            root= settings.MEDIA_ROOT)设置吗？并且曾经在./mysite/settings.py 文件中已经设置好了#}
+{#            MEDIA_URL = '/media/'#}
+{#            MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')#}
+{#            所以模板代码中的{{ lesson.video.url }}才能实现访问静态文件的 URL 功能#}
+        <video width="100%" height="100%" src="{{ lesson.video.url }}" controls="controls" class="text-center"></video>
+        {% else %}
+        <p class="text-center">There is not video lesson.</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if lesson.description %}
+        <p>{{ lesson.description }}</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if lesson.attach %}
+        <p><a href="{{ lesson.attach.url }}">{{ lesson.attach.name|cut:"courses/user_" }}</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'article/base.html' %}
+
+{% block title %}
+delete course
+{% endblock %}
+
+{% block content %}
+<div>
+    <form action="" method="post">{% csrf_token %}
+{#        因为在 DeleteCourseView 类中没有使用 context_object_name 声明渲染模板的变量名称，所#}
+{#        以在模板中使用默认的变量 object 是不提倡的。这里如此使用，一是为了告知读者，二是因为此模板简单#}
+        <p>Are you sure you want to delete "{{ object.title }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock %}
