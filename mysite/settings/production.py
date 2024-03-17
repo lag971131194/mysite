@@ -69,7 +69,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/mysite/mysite_debug.log',
+            'filename': '/home/mysite_debug.log',
         },
         'mail_admins': {
             'level': 'ERROR',
