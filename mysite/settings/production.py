@@ -21,6 +21,7 @@ from .base import *
 # SECRET_KEY = os.environ['SECRET_KEY']
 SECRET_KEY = '7a7y)_*d7fyn^gm^edjpve+=2r%32si=t)6fc)7_88taj-h2'
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
