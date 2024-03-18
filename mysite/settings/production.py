@@ -28,13 +28,14 @@ ALLOWED_HOSTS = ['*']
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-DATABASE_PASSWORD=os.environ['DATABASE_PASSWORD']
+# DATABASE_PASSWORD=os.environ['DATABASE_PASSWORD']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysite_db',
         'USER': 'lag',
-        'PASSWORD': DATABASE_PASSWORD,
+        # 'PASSWORD': DATABASE_PASSWORD,
+        'PASSWORD': 'lag123456',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -53,7 +54,8 @@ EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 EMAIL_HOST='smtp.163.com'
 EMAIL_HOST_USER='18234063582@163.com'
-EMAIL_HOST_PASSWORD=os.environ['EMAIL_HOST_PASSWORD']
+# EMAIL_HOST_PASSWORD=os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_PASSWORD='tencent52@2'
 EMAIL_PORT=25
 EMAIL_USE_TLS=True
 DEFAULT_FROM_EMAIL='18234063582@163.com'
