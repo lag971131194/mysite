@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 </head>
 <body>
-<div class="container">
     {% include 'article/header.html' %}
+<div class="container">
+
     <div class="col-md-2">
     {% include 'article/leftslider.html' %}
     </div>
@@ -18,8 +19,8 @@
     {% block content %}
     {% endblock %}
     </div>
-    {% include 'footer.html' %}
 </div>
+    {% include 'footer.html' %}
 
 </body>
 </html>
